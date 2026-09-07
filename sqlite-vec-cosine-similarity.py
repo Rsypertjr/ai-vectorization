@@ -1,3 +1,20 @@
+"""
+Why This Scaled Solution Beats Manual Matrix Operations
+
+Memory Safety: 
+When scaling to hundreds of thousands of chunks, keeping a colossal raw array array in your system RAM 
+will cause application crashes. SQLite safely pages data from the local solid-state storage disk as needed.
+
+Metadata Cohesion (JOINs): 
+You can easily attach complex production filtering inside the same single string transaction block 
+(e.g., WHERE docs.user_id = 42 AND docs.created_at > '2026-01-01').
+
+C-Level Performance Acceleration: 
+The database handles multi-dimensional arithmetic inside native compiled operations using raw pointer byte 
+streams, meaning it runs faster than raw Python array processing loops.
+"""
+
+
 import os 
 import sqlite3 
 import struct 
